@@ -1,0 +1,288 @@
+body{
+    background:  linear-gradient(135deg, #91f5f0, #eb7198);
+    overflow-x: hidden;
+    font-family: 'Times New Roman', Times, serif;
+   color: black;
+}
+
+h2{
+    text-align: left;
+    text-decoration: underline;
+    font-size: 35px;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+#card
+{   
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    border: dotted;
+    border-radius: 25px;
+    max-width: 100%;
+    width: auto;
+    min-height: 300px;
+    height: auto;
+    display: flex;
+    justify-content: space-between;/*horizontal alignementof blocks*/
+    align-items: top; /*vertical alignment of content*/
+    padding: 20px;
+                                                /* position: fixed;*/
+}
+
+#card b:nth-of-type(1) {
+    font-size: clamp(1rem, 4vw, 80px); 
+}   /*clam:min font-size,responsive size based on viewport,max font */
+#card i:nth-of-type(1){
+    font-size:clamp(1rem, 5vw, 30px);
+}
+
+#card b:nth-of-type(2){
+    font-size: clamp(1rem, 5vw, 20px);
+}
+
+#card > div 
+{  
+    padding : 10px;
+    text-align: left;
+    line-height: 1.5;
+}
+
+figure
+{   
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    max-width: 100%;  
+    width:auto;       
+    height: 250px;
+    border-radius: 50%; 
+    overflow: hidden;     
+    border: 5px solid #fff; /
+}
+
+figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+ }
+
+ 
+
+/* menu bar */
+header
+{   
+    position: sticky;
+    top: 0;
+    z-index: 999;/*to make it sticky even other ele have more precedence in position or z-idx*/
+    padding: 20px 0;
+    border: solid white;
+    background-color: rgb(39, 39, 129);
+}
+
+nav
+{
+   perspective: 1000px;
+   display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+   justify-content: center;
+    gap: 50px;
+}
+
+nav > a
+{   
+    padding: 7px;
+    color: white;
+    text-decoration: none;
+    transition: transform 0.6s linear;/*timing-func:linear - const speed start-end*/
+    transform-origin: center;
+}
+
+
+nav a:hover
+{
+   
+   text-shadow: 3px 3px 5px rgb(252, 250, 250);
+   transform: rotateX(360deg);/* perspective to be mentioned also the ele should be inlin/inline-block to apply*/
+
+}
+
+#education
+{   
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    gap: 20px;
+    padding: 20px;
+}
+
+.edu
+{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+   max-width: 250px; 
+   width: 100%;
+   height: auto;
+   margin: 10px;
+   padding: 20px;
+   display: flex;
+   border: solid white;
+   transition: all 0.3s ease;
+   box-shadow: 5px 5px 10px rgba(255, 255, 255, 0.3);
+   border-radius: 10px;
+   font-style: oblique;
+   
+}
+
+.edu:hover
+{
+    transform: translateY(-10px) scale(1.05);
+    text-shadow: 20px 20px 5px white;
+    box-shadow: 10px 10px 5px white;
+}
+
+
+#skills {
+  max-width: 600px;
+  margin: auto;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.skill {
+  margin: 15px 0;
+}
+
+.skill span {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.bar {
+  background: #eee;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.fill{
+  height: 20px;
+  background: linear-gradient(90deg, #a8edea, #eb7198);
+  width: 0;
+}
+
+#skills:hover .fill{
+    animation: grow 2s linear forwards;
+    /* animation-delay: 0.3s; */
+}
+
+@keyframes grow {
+  to {
+    width: var(--percent);
+  }
+}
+
+#projects
+{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.box
+{
+    padding: 20px 10px;
+    margin: 10px 10px;
+    border: solid white;
+    max-width: 100%;
+    width: auto;
+    background: linear-gradient(135deg, #a8edea, #eb7198);
+}
+
+button
+{
+      border: white;
+      border-radius: 5px;
+      padding: 7px;
+}
+button:hover
+{
+    background : linear-gradient(rgb(136, 136, 234),rgb(88, 190, 253));
+}
+footer
+{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding: 20px;
+    text-align: center;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    #card {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        max-width: 100%;
+        width: auto;
+        text-align: center;
+        padding: 15px;
+    }
+
+    #card > div {
+        padding: 5px;
+    }
+
+    header {
+        padding: 10px 0;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+       nav a {
+        display: block;
+        padding: 10px;
+        font-size: 16px;
+    }
+
+     figure {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 10px;
+    }
+
+    .edu {
+        flex-direction: column;
+        width: 100%;
+        align-items: left;
+        width: 90%;
+    }
+
+    #skills {
+        height: auto;
+    }
+
+    figure {
+        flex-direction: column;
+        /* width: 150px;
+        height: 150px; */
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+    
+    intro{
+        font-size: 12px;
+    }
+    nav a {
+        font-size: 16px;
+    }
+}
+
